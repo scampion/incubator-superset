@@ -24,7 +24,7 @@ FROM python:${PY_VER} AS superset-py
 RUN mkdir /app \
         && apt-get update -y \
         && apt-get install -y --no-install-recommends \
-            build-essential \
+            build-essential python3-dev libsasl2-dev libldap2-dev libssl-dev \
             default-libmysqlclient-dev \
             libpq-dev \
         && rm -rf /var/lib/apt/lists/*
